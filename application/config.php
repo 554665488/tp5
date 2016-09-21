@@ -228,7 +228,13 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
-//   'url_param_type' => 1,//配置URL的传值方式严格按照控制器定义的方法接收参数来传值
-    // 设置pathinfo分隔符
-//     'pathinfo_depr'=>'-',
+      //'url_param_type' => 1,//配置URL的传值方式严格按照控制器定义的方法接收参数来传值
+
+     // 设置pathinfo分隔符
+
+     // 'pathinfo_depr'=>'-',
+
+     // 默认输出类型
+//    'default_return_type'    => 'json',
+//    'default_ajax_return'=>'json',//默认的自动响应输出会自动判断是否AJAX请求，如果是的话会自动输出default_ajax_return配置的输出类型。
 ];
