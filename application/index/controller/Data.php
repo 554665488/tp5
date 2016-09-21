@@ -43,4 +43,9 @@ class Data extends common
         dump($res);
     }
     //query方法用于查询，默认情况下返回的是数据集（二维数组），execute方法的返回值是影响的行数。
+    //连接其他的库
+    public function otherData(){
+        $res=Db::connect('db1')->query("select * from shopnc_auth ");
+        dump($res);
+    }
 }
