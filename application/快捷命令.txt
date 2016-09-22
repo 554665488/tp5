@@ -1,0 +1,4 @@
+php think build --module demo//生成模块
+
+
+//php think make:controller index/Blog  生成控制器
