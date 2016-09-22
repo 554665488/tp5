@@ -1,0 +1,13 @@
+{layout name='/common/layout' /}
+<body>
+<h2>用户列表（{$list->total()}）</h2>
+{volist name="list" id="user" }
+<div class="info">
+    ID：{$user.id}<br/>
+    昵称：{$user.title}<br/>
+    邮箱：{$user.pid}<br/>
+
+</div>
+{/volist}
+
+
