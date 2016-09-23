@@ -3,6 +3,8 @@ namespace app\index\controller;
 
 use app\demo\model\User;
 use app\index\model\Class2 as classModel;
+use org\util\ArrayList;
+use think\Session;
 
 class Index
 {
@@ -11,4 +13,19 @@ class Index
         $allList=classModel::all();
         dump($allList);
     }
+    //array 扩展的使用
+    public function arrayList(){
+        $list=['thinkphp', 'thinkphp', 'onethink', 'topthink'];
+        $arrObj=new ArrayList($list);
+        $arrObj->add('addelement');
+        $arrObj->unique();
+//        halt($arrObj->toArray());
+        dump($arrObj->toArray());
+        trace($arrObj->toJson());
+    }
+    public function session(){
+        Session::set('name','php');
+        halt(Session::get('name'));
+    }
+
 }

@@ -154,14 +154,15 @@ return [
     // | 日志设置
     // +----------------------------------------------------------------------
 
-    /*'log'                    => [
+    'log'                    => [
         // 日志记录方式，内置 file socket 支持扩展
         'type'  => 'File',
         // 日志保存目录
         'path'  => LOG_PATH,
         // 日志记录级别
         'level' => [],
-    ],*/
+    ],
+    //socket 支持扩展配置日志
     'log'     =>  [
         'type'                  =>  'socket',
         'host'                  =>  'localhost',
@@ -169,6 +170,13 @@ return [
         'force_client_ids'      =>  ['luofei_zfH5NbLn'],
         'allow_client_ids'      =>  ['luofei_zfH5NbLn'],
     ],
+
+    //使用Email扩展将日志信息发送到指定邮箱
+   /* 'log'   =>  [
+        'type'          =>  'driver\log\Email',
+        'email_addr'    =>  '554665488@qq.com',
+        'send_level'    =>  ['error', 'info'],
+    ],*/
     // +----------------------------------------------------------------------
     // | Trace设置 开启 app_trace 后 有效
     'app_trace' =>  true,
@@ -214,6 +222,17 @@ return [
         'type'           => '',
         // 是否自动开启 SESSION
         'auto_start'     => true,
+    ],
+    'session' => [
+        'prefix'     => 'module',
+        'type'       => 'redis',
+        'auto_start' => true,
+        // redis主机
+        'host'       => '127.0.0.1',
+        // redis端口
+        'port'       => 6379,
+        // 密码
+        'password'   => '',
     ],
 
     // +----------------------------------------------------------------------

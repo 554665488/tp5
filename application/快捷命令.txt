@@ -20,3 +20,8 @@ socketlog-server
 如果想服务后台运行，使用：
 
 socketlog-server > /dev/null &
+
+
+
+
+composer require topthink/think-captcha

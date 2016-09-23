@@ -8,6 +8,10 @@ return [
 //    ]
 
           '__PUBLIC__'=>'/static',
-
+    'session'                => [
+        'prefix'         => 'index',
+        'type'           => '',
+        'auto_start'     => true,
+    ],
 
 ];
