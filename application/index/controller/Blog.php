@@ -4,7 +4,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Request;
-
+use app\index\model\Blog as Blogs;
 class Blog extends Controller
 {
     /**
@@ -14,55 +14,45 @@ class Blog extends Controller
      */
     public function index()
     {
-        //
+
+       $list=Blogs::all();
+        return json($list);
     }
 
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * 保存新建的资源
-     *
+     * post   方式
      * @param  \think\Request  $request
      * @return \think\Response
      */
     public function save(Request $request)
     {
         //
+        $data=$request->param();
+        $result=Blogs::create($data);
+        return json($result);
     }
 
     /**
      * 显示指定的资源
-     *
+     * get方式
      * @param  int  $id
      * @return \think\Response
      */
     public function read($id)
     {
         //
+       $data=Blogs::get($id);
+        return json($data);
     }
 
-    /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+
 
     /**
      * 保存更新的资源
-     *
+     * put  方式
      * @param  \think\Request  $request
      * @param  int  $id
      * @return \think\Response
@@ -70,16 +60,21 @@ class Blog extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data=$request->param();
+        $result=Blogs::update($data,['id'=>$id]);
+        return json($result);
     }
 
     /**
      * 删除指定资源
-     *
+     *delete  方式
      * @param  int  $id
      * @return \think\Response
      */
     public function delete($id)
     {
         //
+       $result=Blogs::destroy($id);
+           return json($result);
     }
 }

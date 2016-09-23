@@ -154,15 +154,21 @@ return [
     // | 日志设置
     // +----------------------------------------------------------------------
 
-    'log'                    => [
+    /*'log'                    => [
         // 日志记录方式，内置 file socket 支持扩展
         'type'  => 'File',
         // 日志保存目录
         'path'  => LOG_PATH,
         // 日志记录级别
         'level' => [],
+    ],*/
+    'log'     =>  [
+        'type'                  =>  'socket',
+        'host'                  =>  'localhost',
+        'show_included_files'   =>  true,
+        'force_client_ids'      =>  ['luofei_zfH5NbLn'],
+        'allow_client_ids'      =>  ['luofei_zfH5NbLn'],
     ],
-
     // +----------------------------------------------------------------------
     // | Trace设置 开启 app_trace 后 有效
     'app_trace' =>  true,

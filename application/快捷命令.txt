@@ -2,3 +2,21 @@ php think build --module demo//生成模块
 
 
 //php think make:controller index/Blog  生成控制器
+
+
+SocketLog安装方法
+
+首先，请在chrome浏览器上安装好插件。
+SocketLog首先需要安装chrome插件，Chrome插件安装页面 （需翻墙）
+
+安装服务端（如果没有nodejs和npm 请首先安装，安装参考），运行下面指令：
+
+npm install -g socketlog-server
+安装完成后, 运行命令
+
+socketlog-server
+即可启动服务。 将会在本地起一个websocket服务 ，监听端口是1229 。
+
+如果想服务后台运行，使用：
+
+socketlog-server > /dev/null &
