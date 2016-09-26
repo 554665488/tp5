@@ -25,3 +25,13 @@ socketlog-server > /dev/null &
 
 
 composer require topthink/think-captcha
+
+
+
+
+echo "# rr" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:554665488/rr.git
+git push -u origin master
