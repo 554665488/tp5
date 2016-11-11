@@ -18,7 +18,8 @@
     "require": {
         "php": ">=5.4.0",
         "topthink/framework": "^5.0",
-        "topthink/think-captcha": "^1.0"
+        "zircote/swagger-php": "2.0.7",
+        "endroid/qrcode": "1.7.4"
     },
     "extra": {
         "think-path": "thinkphp"
