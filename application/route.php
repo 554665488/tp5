@@ -32,7 +32,7 @@ return [
         ':id' => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-    //约束url请求方式为get 后缀必须为html
+    //约束url请求方式为get 后缀必须为html  $表示完全匹配
     'hl/[:city]/[:name]$' => ['demo/index/hello', ['method' => 'get', 'ext' => 'html']],//定义hello到demo模块下的定额小控制器的hello方法 city和name为可选参数$代表完全匹配
 //    'del/:id'=>['demo/index/del',['method'=>'get'],['id'=>'\d+']],//id为必须值
 
