@@ -8,9 +8,9 @@
 namespace app\index\behavior;
 class CheckAuth
 {
-//    public function run(){
-//        echo '用户登录判断d的behacior';
-//    }
+    public function run(){
+        echo '用户登录判断d的behacior';
+    }
     public function app_init(&$params)
     {
         echo '用户登录判断的behacior';
@@ -18,6 +18,6 @@ class CheckAuth
 
     public function app_end(&$params)
     {
-        echo '用end判断的behacior';
+        echo '用判断的behacior';
     }
 }

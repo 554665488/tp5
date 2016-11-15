@@ -23,6 +23,6 @@ return [
     'log_write'    => [],
     // 应用结束
     'app_end'      => [
-        'app\\index\\behavior\\CheckAuth',
+//        'app\\index\\behavior\\CheckAuth',
     ],
 ];
