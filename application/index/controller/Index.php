@@ -17,6 +17,9 @@ class Index
 //        Hook::call('Category' , 'index');
 //        B::listen('app_init');
 //        B::listen('app_end');
+
+
+
     }
     //array 扩展的使用
     public function arrayList(){

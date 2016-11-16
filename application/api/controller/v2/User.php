@@ -15,7 +15,8 @@ class User
      if($data){
          return json($data);
      }else{
-         return json(['error'=>'404']);
+         trace(['error'=>'404']);
+//         return json(['error'=>'404']);
      }
  }
 

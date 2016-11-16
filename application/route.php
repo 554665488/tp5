@@ -22,6 +22,7 @@ Route::rule(['test', 'test/:name'], function ($name) {
 
 //RESTFul模式配置路由
 Route::resource('blog','index/blog');
+Route::resource('blogapi','api/blog');
 Route::resource('captcha','index/captcha');
 Route::rule(':version/user/:id','api/:version.User/read');//版本号/控制器/id值      指向 api（分组）/版本号/控制器/操作方法 //http://www.tp5.net/v1/user/10
 return [

@@ -163,13 +163,13 @@ return [
         'level' => [],
     ],
     //socket 支持扩展配置日志
-    'log'     =>  [
+  /*  'log'     =>  [
         'type'                  =>  'socket',
         'host'                  =>  'localhost',
         'show_included_files'   =>  true,
         'force_client_ids'      =>  ['luofei_zfH5NbLn'],
         'allow_client_ids'      =>  ['luofei_zfH5NbLn'],
-    ],
+    ],*/
 
     //使用Email扩展将日志信息发送到指定邮箱
    /* 'log'   =>  [
@@ -183,7 +183,7 @@ return [
     // 设置Trace显示方式
     'trace' =>  [
         // 使用浏览器console显示页面trace信息
-        'type'  =>  'console',
+        'type'  =>  '',
     ],
     //开始sql语句优化分析   是否需要进行SQL性能分析
     'sql_explain'    => true,
