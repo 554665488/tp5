@@ -16,6 +16,7 @@
  * User: Administrator
  * Date: 2016/9/21
  * Time: 11:02
+ * 扩展自己的全局自定义函数，或者重写系统的助手函数
  */
 
 namespace app;

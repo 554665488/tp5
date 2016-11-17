@@ -41,7 +41,7 @@ class Blog extends Controller
     {
         //
         $data=$request->param();
-        $result=Blogs::create($data);
+        $result=Blogs::create($data);//create传入的数组或者标准对象
         return json($result);
     }
 
@@ -93,5 +93,7 @@ class Blog extends Controller
     public function delete($id)
     {
         //
+        $result=Blogs::destroy($id);
+        return $result;
     }
 }

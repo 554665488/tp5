@@ -11,6 +11,7 @@ use think\console\Output;
  * User: Administrator
  * Date: 2016/9/23
  * Time: 11:17
+ * 该指令并不会删除目录，仅仅删除目录下面（包括子目录）的文件。
  */
 class Clear extends Command
 {
@@ -25,7 +26,7 @@ class Clear extends Command
  protected  function execute(Input $input, Output $output)
  {
      $path  = $input->getOption('path') ?: RUNTIME_PATH;
-     $files = scandir($path);
+     $files = scandir($path);//扫描文件  获取文件里的文件名一数组的形式返回
      if ($files) {
          foreach ($files as $file) {
              if ('.' != $file && '..' != $file && is_dir($path . $file)) {

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\phpStudy\WWW\tp5\public/../application/index\view\captcha\index.html";i:1474618228;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\phpStudy\WWW\tp5\public/../application/index\view\captcha\index.html";i:1479365458;}*/ ?>
 <!doctype html>
 <html>
 <head>

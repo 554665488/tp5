@@ -23,13 +23,17 @@ class Index
     }
     //array 扩展的使用
     public function arrayList(){
-        $list=['thinkphp', 'thinkphp', 'onethink', 'topthink'];
+        $list=['thinkphp', 'thinkphp', 'topthink', 'topthink','topthink'];
         $arrObj=new ArrayList($list);
-        $arrObj->add('addelement');
-        $arrObj->unique();
+//        $arrObj->add('addelement');
+//        $arrObj->unique();
 //        halt($arrObj->toArray());
+
+//        dump($arrObj->toArray());
+        dump($arrObj->unshift('sss'));
         dump($arrObj->toArray());
-        trace($arrObj->toJson());
+        dump($arrObj->rsort());
+        trace($arrObj);
     }
     public function session(){
         Session::set('name','php');

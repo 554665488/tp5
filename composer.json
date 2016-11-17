@@ -20,7 +20,9 @@
         "topthink/framework": "^5.0",
         "zircote/swagger-php": "2.0.7",
         "endroid/qrcode": "1.7.4",
-        "topthink/think-helper": "^1.0"
+        "topthink/think-helper": "^1.0",
+        "topthink/think-captcha": "^1.0",
+        "topthink/think-testing": "^1.0"
     },
     "extra": {
         "think-path": "thinkphp"
