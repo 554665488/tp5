@@ -15,6 +15,7 @@ use app\index\model\Profile;
 use app\index\model\Role;
 use think\Config;
 use think\Controller;
+use think\Db;
 use think\Log;
 use app\index\model\User as UserModel;
 use think\Request;
@@ -36,6 +37,8 @@ class User extends Controller
 //      $this->view->engine->layout('layout','[__REPLACE__]');
         $this->view->replace(['__PUBLIC__' => '/static']);
 //       $this->display();
+        Db::name('user')->where('id','eq','2')->setInc('status',1);
+        Db::name('user')->where('id','eq','2')->setField('delete_time',1);
         trace([1, 2, 3]);
         return $this->fetch();
     }
@@ -119,7 +122,7 @@ class User extends Controller
          echo $user->email . '<br/>';
          echo date('Y/m/d', $user->birthday) . '<br/>';*/
 //       dump($user->books);
-        $info = $user->books()->where('title', 'ThinkPHP5关联更新1')->find();
+        $info = $user->books()->where('title', 'ThinkPHP5关联更新1')->find();//模型没有链式操作，所有链式操作都是调用的数据库类Db；
         dump($info);
     }
 

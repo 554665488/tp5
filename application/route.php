@@ -20,6 +20,7 @@ Route::rule(['test', 'test/:name'], function ($name) {
     return $name;
 });
 
+
 //RESTFul模式配置路由
 Route::resource('blog','index/blog');
 Route::resource('blogapi','api/blog');

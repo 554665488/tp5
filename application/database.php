@@ -26,6 +26,15 @@ return [
     'dsn'            => '',
     // 数据库连接参数
     'params'         => [],
+
+    /*
+     * 可以针对不同的连接需要添加数据库的连接参数（具体的连接参数可以参考PHP手册），内置采用的参数包括如下：
+    PDO::ATTR_CASE              => PDO::CASE_NATURAL,
+    PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_ORACLE_NULLS      => PDO::NULL_NATURAL,
+    PDO::ATTR_STRINGIFY_FETCHES => false,
+    PDO::ATTR_EMULATE_PREPARES  => false,*/
+
     // 数据库编码默认采用utf8
     'charset'        => 'utf8',
     // 数据库表前缀
