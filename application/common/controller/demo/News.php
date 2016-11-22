@@ -1,11 +1,11 @@
 <?php
 
-namespace app\index\controller;
+namespace app\common\controller\demo;
 
 use think\Controller;
 use think\Request;
 
-class Test extends Controller
+class News extends Controller
 {
     /**
      * 显示资源列表
@@ -15,8 +15,6 @@ class Test extends Controller
     public function index()
     {
         //
-        echo '绑定二级域名';
-
     }
 
     /**

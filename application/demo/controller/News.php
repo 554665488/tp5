@@ -1,11 +1,12 @@
 <?php
 
-namespace app\index\controller;
+namespace app\demo\controller;
 
 use think\Controller;
 use think\Request;
+use think\Route;
 
-class Test extends Controller
+class News extends Controller
 {
     /**
      * 显示资源列表
@@ -15,8 +16,6 @@ class Test extends Controller
     public function index()
     {
         //
-        echo '绑定二级域名';
-
     }
 
     /**
@@ -27,6 +26,7 @@ class Test extends Controller
     public function create()
     {
         //
+        dump(Route::rules());//获取所有的路由信息
     }
 
     /**
@@ -49,6 +49,7 @@ class Test extends Controller
     public function read($id)
     {
         //
+        dump(request()->route());
     }
 
     /**
@@ -60,6 +61,7 @@ class Test extends Controller
     public function edit($id)
     {
         //
+        echo 'edit';
     }
 
     /**
@@ -72,6 +74,7 @@ class Test extends Controller
     public function update(Request $request, $id)
     {
         //
+        echo $id;
     }
 
     /**
@@ -83,5 +86,6 @@ class Test extends Controller
     public function delete($id)
     {
         //
+        echo $id;
     }
 }

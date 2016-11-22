@@ -19,13 +19,34 @@ use think\Route;
 Route::rule(['test', 'test/:name'], function ($name) {
     return $name;
 });
+//如果希望在没有匹配到所有的路由规则后执行一条设定的路由，可以使用MISS路由功能
+//Route::miss('public/miss');
+Route::domain('d','demo');
+//模型绑定（V5.0.1）
+Route::rule('user/:nickname/:id','index/index/index','GET',[
+    'ext'                   =>  'html',
+    'bind_model'    =>  [
+        'user'  =>  function($param){
+            $model = new \app\index\model\User;
+            return $model->where($param)->find();
+        }
+    ],
+]);
 
 
+Route::resource('news','demo/News');
+//路由别名可以指向任意一个有效的路由地址，例如下面指向一个类
+//Route::alias('ss','demo/News');
+Route::resource('news','demo/News',['only'=>['index','edit']]);//限制操作方法
+Route::get('update/:id','demo/News/update');
+Route::any('new/:id', 'demo/News/read?uid=100', ['method' => 'get', 'after_behavior' => 'app\demo\behavior\ReadInfo']);//路由匹配成功后，执行的行为
+Route::any('new/index', '@demo/News/index', ['method' => 'get', 'domain' => 'www.tp5.net', 'before_behavior' => 'app\index\behavior\CheckAuth']);//路由匹配前执行的行为
 //RESTFul模式配置路由
-Route::resource('blog','index/blog');
-Route::resource('blogapi','api/blog');
+Route::resource('blogs', 'index/blog');
+Route::resource('blogapi', 'api/blog');
 //Route::resource('captcha','index/captcha');
-Route::rule(':version/user/:id','api/:version.User/read');//版本号/控制器/id值      指向 api（分组）/版本号/控制器/操作方法 //http://www.tp5.net/v1/user/10
+//支持路由到动态的模块、控制器或者操作
+Route::rule(':version/user/:id', 'api/:version.User/read');//版本号/控制器/id值      指向 api（分组）/版本号/控制器/操作方法 //http://www.tp5.net/v1/user/10
 return [
     '__pattern__' => [
         'name' => '\w+',
@@ -51,6 +72,14 @@ return [
     'blog/:name'=>['demo/blog/read',['method'=>'get'],['name'=>'\w+']],
     */
 
+    //直接路由到某个空间下的某个类的方法
+
+    'service/study' => '\app\demo\service\Study@go',
+    'service/study_up' => '\app\demo\service\Study::up',
+
+    //路由到重定向地址
+    'bai/'=>'http://www.baidu.com/',
+
     //路由分组可以提高路由的检测效率
 
     '[blog]' => [
@@ -73,18 +102,16 @@ return [
 
 
     // 全局变量规则定义 关联模型的路由的定义  //user控制器路由定义
-    '__pattern__'         => [
-        'id'    => '\d+',
+    '__pattern__' => [
+        'id' => '\d+',
     ],
-    'user/index'      => 'index/user/index',
-    'user/create'     => 'index/user/create',
-    'user/add'        => 'index/user/add',
-    'user/add_list'   => 'index/user/addList',
-    'user/update/:id' => 'index/user/update',
-    'user/delete/:id' => 'index/user/delete',
-    'user/:id'        => 'index/user/read',
-
-
+//    'user/index' => 'index/user/index',
+//    'user/create' => 'index/user/create',
+//    'user/add' => 'index/user/add',
+//    'user/add_list' => 'index/user/addList',
+//    'user/update/:id' => 'index/user/update',
+//    'user/delete/:id' => 'index/user/delete',
+//    'user/:id' => 'index/user/read',
 
 
 ];
