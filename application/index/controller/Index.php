@@ -4,6 +4,8 @@ namespace app\index\controller;
 use app\demo\model\User;
 use app\index\model\Class2 as classModel;
 use org\util\ArrayList;
+use think\Config;
+use think\Env;
 use think\Route;
 use think\Session;
 use app\common\Hook;
@@ -17,13 +19,18 @@ class Index
 //        dump($allList);
 //        Hook::call('Category' , 'index');//钩子的扩展
 
-//        B::listen('app_init');
+
 //        dump(B::get('app_init'));
 //        B::listen('app_end');
         // 直接执行行为 如果需要，你也可以不绑定行为标签，直接调用某个行为，使用：
-        $params='zhixing';
-        $result = B::exec('app\\index\\behavior\\CheckAuth','auth',$params);
-        dump(request()->user);
+      /*  $params='zhixing';
+        $result = B::exec('app\\index\\behavior\\CheckAuth','auth',$params);*/
+//        dump(request()->user);
+
+//        dump(Config::load('my_config.php','','index'));
+        Config::set('qq','484428887','index');
+
+
 
 
     }

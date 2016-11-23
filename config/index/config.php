@@ -7,11 +7,11 @@ return [
 //        'layout_item'   =>  '[__REPLACE__]'
 //    ]
 
-          '__PUBLIC__'=>'/static',
-    'session'                => [
-        'prefix'         => 'index',
-        'type'           => '',
-        'auto_start'     => true,
+    '__PUBLIC__' => '/static',
+    'session' => [
+        'prefix' => 'index',
+        'type' => '',
+        'auto_start' => true,
     ],
 
 ];

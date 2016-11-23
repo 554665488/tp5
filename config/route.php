@@ -21,9 +21,9 @@ Route::rule(['test', 'test/:name'], function ($name) {
 });
 //如果希望在没有匹配到所有的路由规则后执行一条设定的路由，可以使用MISS路由功能
 //Route::miss('public/miss');
-Route::domain('d','demo');
+//Route::domain('d','demo');
 //模型绑定（V5.0.1）
-Route::rule('user/:nickname/:id','index/index/index','GET',[
+/*Route::rule('user/:nickname/:id','index/index/index','GET',[
     'ext'                   =>  'html',
     'bind_model'    =>  [
         'user'  =>  function($param){
@@ -31,16 +31,16 @@ Route::rule('user/:nickname/:id','index/index/index','GET',[
             return $model->where($param)->find();
         }
     ],
-]);
-
-
+]);*/
+Route::rule('before','index/Bef/index');
+Route::rule('home','index/index/index');
 Route::resource('news','demo/News');
 //路由别名可以指向任意一个有效的路由地址，例如下面指向一个类
 //Route::alias('ss','demo/News');
 Route::resource('news','demo/News',['only'=>['index','edit']]);//限制操作方法
 Route::get('update/:id','demo/News/update');
-Route::any('new/:id', 'demo/News/read?uid=100', ['method' => 'get', 'after_behavior' => 'app\demo\behavior\ReadInfo']);//路由匹配成功后，执行的行为
-Route::any('new/index', '@demo/News/index', ['method' => 'get', 'domain' => 'www.tp5.net', 'before_behavior' => 'app\index\behavior\CheckAuth']);//路由匹配前执行的行为
+//Route::any('new/:id', 'demo/News/read?uid=100', ['method' => 'get', 'after_behavior' => 'app\demo\behavior\ReadInfo']);//路由匹配成功后，执行的行为
+//Route::any('new/index', '@demo/News/index', ['method' => 'get', 'domain' => 'www.tp5.net', 'before_behavior' => 'app\index\behavior\CheckAuth']);//路由匹配前执行的行为
 //RESTFul模式配置路由
 Route::resource('blogs', 'index/blog');
 Route::resource('blogapi', 'api/blog');

@@ -14,13 +14,21 @@ return [
     // 应用开始
     'app_begin'    => [],
     // 模块初始化
-    'module_init'  => [],
+    'module_init'  => [
+//        'app\\index\\behavior\\CheckAuth',
+    ],
     // 操作开始执行
-    'action_begin' => [],
+    'action_begin' => [
+//        'app\\index\\behavior\\CheckAuth',
+    ],
     // 视图内容过滤
-    'view_filter'  => [],
+    'view_filter'  => [
+
+    ],
     // 日志写入
-    'log_write'    => [],
+    'log_write'    => [
+
+    ],
     // 应用结束
     'app_end'      => [
 //        'app\\index\\behavior\\CheckAuth',

@@ -13,7 +13,8 @@
 return [
     // 应用初始化
     'app_init'     => [
-        '\\app\\common\\Hook'
+//        '\\app\\common\\Hook',
+
     ],
     // 应用开始
     'app_begin'    => [],

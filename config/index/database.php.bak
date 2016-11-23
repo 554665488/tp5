@@ -12,12 +12,12 @@
 //模块的数据库配置文件中只需要配置和全局数据库配置文件差异的部分，相同的不需要重复配置
 return [
     // 数据库名
-    'database'    => 'tp5',
+    //'database'    => 'tp5',
     // 数据库表前缀
-    'prefix'      => 'tp_',
+    //'prefix'      => 'tp_',
     // 数据库连接参数
     'params' => [
         // 使用长连接
-        \PDO::ATTR_PERSISTENT => true,
+//        \PDO::ATTR_PERSISTENT => true,
     ],
 ];
