@@ -40,5 +40,9 @@ class Error
         return "没有检测路由";
 
     }
+    public function _empty($name){
+        echo '请求不存在的控制器'.Request::instance()->controller()."</br>";
+        echo   '请求不存在的方法'.$name;
+    }
 
 }

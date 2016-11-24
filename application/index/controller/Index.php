@@ -14,7 +14,7 @@ use think\Session;
 use app\common\Hook;
 use think\Hook as B;
 use think\helper\Time;
-use app\index\model\Category;
+
 class Index extends Controller
 {
     public function index()
@@ -32,14 +32,10 @@ class Index extends Controller
 //        dump(request()->user);
 
 //        dump(Config::load('my_config.php','','index'));
-        $Category = new Category;//实例化类
-        $category_tree = $Category->category_tree();// 获取整体多级数组树结果
 
-        $this->view->category_list = $Category->category_html($category_tree);//将结果转化为实体html并传值给模板
-        return $this->fetch();
 //        dump(Request::instance()->server('HTTP_X_REQUESTED_WITH', '', 'strtolower'));
 //        Config::set('qq','484428887','index');
-
+         return $this->fetch();
 
 
 
