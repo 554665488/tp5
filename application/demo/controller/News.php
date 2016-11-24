@@ -6,7 +6,7 @@ use think\Controller;
 use think\Request;
 use think\Route;
 
-class News extends Controller
+class News extends \app\common\controller\demo\Base
 {
     /**
      * 显示资源列表
@@ -16,6 +16,7 @@ class News extends Controller
     public function index()
     {
         //
+        echo __FUNCTION__;
     }
 
     /**

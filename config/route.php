@@ -36,7 +36,7 @@ Route::rule('before','index/Bef/index');
 Route::rule('home','index/index/index');
 Route::resource('news','demo/News');
 //路由别名可以指向任意一个有效的路由地址，例如下面指向一个类
-//Route::alias('ss','demo/News');
+//Route::alias('yfl','\app\index\controller\User\index');
 Route::resource('news','demo/News',['only'=>['index','edit']]);//限制操作方法
 Route::get('update/:id','demo/News/update');
 //Route::any('new/:id', 'demo/News/read?uid=100', ['method' => 'get', 'after_behavior' => 'app\demo\behavior\ReadInfo']);//路由匹配成功后，执行的行为
@@ -105,13 +105,13 @@ return [
     '__pattern__' => [
         'id' => '\d+',
     ],
-//    'user/index' => 'index/user/index',
-//    'user/create' => 'index/user/create',
-//    'user/add' => 'index/user/add',
-//    'user/add_list' => 'index/user/addList',
-//    'user/update/:id' => 'index/user/update',
-//    'user/delete/:id' => 'index/user/delete',
-//    'user/:id' => 'index/user/read',
+    'user/index' => 'index/user/index',
+    'user/create' => 'index/user/create',
+    'user/add' => 'index/user/add',
+    'user/add_list' => 'index/user/addList',
+    'user/update/:id' => 'index/user/update',
+    'user/delete/:id' => 'index/user/delete',
+    'user/:id' => 'index/user/read',
 
 
 ];

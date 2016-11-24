@@ -4,19 +4,23 @@ namespace app\index\controller;
 use app\demo\model\User;
 use app\index\model\Class2 as classModel;
 use org\util\ArrayList;
+use think\Cache;
 use think\Config;
+use think\Controller;
 use think\Env;
+use think\Request;
 use think\Route;
 use think\Session;
 use app\common\Hook;
 use think\Hook as B;
 use think\helper\Time;
-class Index
+use app\index\model\Category;
+class Index extends Controller
 {
     public function index()
     {
-//        $allList=classModel::all();
-//        dump($allList);
+      /*  $allList=classModel::all();
+        dump($allList);*/
 //        Hook::call('Category' , 'index');//钩子的扩展
 
 
@@ -28,7 +32,13 @@ class Index
 //        dump(request()->user);
 
 //        dump(Config::load('my_config.php','','index'));
-        Config::set('qq','484428887','index');
+        $Category = new Category;//实例化类
+        $category_tree = $Category->category_tree();// 获取整体多级数组树结果
+
+        $this->view->category_list = $Category->category_html($category_tree);//将结果转化为实体html并传值给模板
+        return $this->fetch();
+//        dump(Request::instance()->server('HTTP_X_REQUESTED_WITH', '', 'strtolower'));
+//        Config::set('qq','484428887','index');
 
 
 

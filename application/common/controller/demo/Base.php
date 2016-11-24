@@ -4,8 +4,9 @@ namespace app\common\controller\demo;
 
 use think\Controller;
 use think\Request;
-
-class News extends Controller
+//解析规则是从操作开始解析，然后解析控制器，最后解析模块，例如：
+//其中common模块是一个特殊的模块，默认是禁止直接访问的，一般用于放置一些公共的类库用于其他模块的继承。
+class Base extends Controller
 {
     /**
      * 显示资源列表
@@ -15,6 +16,7 @@ class News extends Controller
     public function index()
     {
         //
+        echo "common";
     }
 
     /**

@@ -37,8 +37,8 @@ class User extends Controller
 //      $this->view->engine->layout('layout','[__REPLACE__]');
         $this->view->replace(['__PUBLIC__' => '/static']);
 //       $this->display();
-        Db::name('user')->where('id','eq','2')->setInc('status',1);
-        Db::name('user')->where('id','eq','2')->setField('delete_time',1);
+        Db::name('user')->where('id', 'eq', '2')->setInc('status', 1);
+        Db::name('user')->where('id', 'eq', '2')->setField('delete_time', 1);
         trace([1, 2, 3]);
         return $this->fetch();
     }
@@ -165,7 +165,7 @@ class User extends Controller
     public function read_role()
     {
         //获取某个用户的所有角色的话，直接使用：
-        $user=UserModel::get(15);
+        $user = UserModel::get(15);
         dump($user->toJson());
         trace($user->toJson());
     }
