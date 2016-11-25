@@ -88,7 +88,8 @@ return [
         ':name' => ['demo/blog/read', ['method' => 'get'], ['name' => '\w+']],
     ],
 
-
+    //获得路由调度信息test
+    'getRouteInfo/:id'=>['demo/Demand/getRouteInfo','[]',['id'=>'\d{2}']],
     //统一定义url变量的规则
     /* '__pattern__'=>[
           'name'=>'\w+',

@@ -21,7 +21,7 @@ class Index extends Controller
     {
       /*  $allList=classModel::all();
         dump($allList);*/
-//        Hook::call('Category' , 'index');//钩子的扩展
+        Hook::call('Category' , 'index');//钩子的扩展
 
 
 //        dump(B::get('app_init'));
@@ -35,7 +35,7 @@ class Index extends Controller
 
 //        dump(Request::instance()->server('HTTP_X_REQUESTED_WITH', '', 'strtolower'));
 //        Config::set('qq','484428887','index');
-         return $this->fetch();
+//         return $this->fetch();
 
 
 
