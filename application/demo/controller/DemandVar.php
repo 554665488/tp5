@@ -39,6 +39,5 @@ class DemandVar
         dump($request);
         echo file_get_contents('php://input');
 
-
     }
 }
