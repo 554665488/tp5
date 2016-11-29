@@ -10,16 +10,32 @@ namespace app\demo\controller;
 
 
 use app\index\hook\User;
-use think\Loader;
+
 use think\Request;
+use think\Route;
 
 class DemandVar
 {
+    protected $name;
+
+    /**
+     * DemandVar constructor.
+     * @param $name
+     * 架构方法参数绑定（V5.0.1）
+     */
+//    public function __construct($name)
+//    {
+//        echo $this->$name = $name;
+//    }
+
     public function index(Request $request)
     {
 //        dump($request->has('id'));
-//        dump($request->filter('htmlspecialchars'));
-        dump($request->get('name/a'));
+//        dump($request->getCache());
+
+        $request->filter('htmlspecialchars');
+        $request->get('name/a', '');
+//        dump($request->get('name/a'));//获取变量并转换数据类型
 //        dump(input('server.'));
         return view();
 
@@ -41,18 +57,10 @@ class DemandVar
          dump($request->put());
          dump($request->route());*/
 //        dump($request->server());
+
         dump($request->header());
         echo file_get_contents('php://input');
-        /* dump(Loader::import('ase.AesCrypt',EXTEND_PATH));
-         Loader::import('ase.AesCrypt',EXTEND_PATH);
-         $ase=new \AesCrypt();
-         dump($ase->encrypt('18246017461'));
-         dump($ase->decrypt('7rsHSEHKZ81riyU95mUEAw'));
 
-         echo EXTEND_PATH;//D:\phpStudy\WWW\tp5\extend\
-         Loader::addClassMap('ase\AesCrypt',EXTEND_PATH.'ase\AesCrypt.php');
-         dump(Loader::autoload('ase\AesCrypt'));
-         $ase=new \AesCrypt();*/
 
     }
 
@@ -65,18 +73,40 @@ class DemandVar
         $request = Request::instance();
         //call_user_func_array('\\think\\Log::record', $args);
         $request::hook('user', '\\app\\index\\hook\\User::getUserInfo');
+        /* $user=new User();
+         $request::hook('user', array($user,'getUserInfo'));*/
         dump($request->user(1));
 
     }
 
-    public static function bind($id=null,$uid=null)
+    /**
+     * @param null $id
+     * @param null $uid
+     * 可以动态注入当前Request对象的属性，方法
+     */
+    public function bindObj($id = null, $uid = null)
     {
 
+
+//        $request = Request::instance()->bind('user', new User);
+        $request = Request::instance()->bind('user', new \app\index\hook\User);
         dump(Request::instance());
-        $user=new User();
-        $request=Request::instance()->bind('user',$user);
         dump(Request::instance()->user);
-        $objUser=Request::instance()->user;
+        $objUser = Request::instance()->user;
 //        dump($objUser::$info);
+
+    }
+
+    /**
+     * 其它对象自动注入
+     * 如果没有事先在Request对象中进行对象绑定的话，调用 intoObj 方法的时候user参数会自动实例化，相当于完成了下面的绑定操作：
+     * Request::instance()->bind('user', new app\index\hook\User);
+     *
+     * 对象自动注入不影响原来的参数绑定。
+     */
+    public static function intoObj(User $user)
+    {
+//        dump(Request::instance());
+        dump($user);
     }
 }

@@ -19,6 +19,7 @@ use think\Route;
 Route::rule(['test', 'test/:name'], function ($name) {
     return $name;
 });
+Route::get('demand/:id','demo/DemandVar/index',['cache'=>['demand/:id',10]]);
 //如果希望在没有匹配到所有的路由规则后执行一条设定的路由，可以使用MISS路由功能
 //Route::miss('public/miss');
 //Route::domain('d','demo');
